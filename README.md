@@ -30,7 +30,7 @@ module "wordpress" {
 
 ## Architecture
 The architecture is based of AWS' WordPress deployment best practices which can be found here:
-![AWS Reference Architecture](images/awsref.jpg)
+![AWS Reference Architecture](images/aws-refarch-wordpress.jpg)
 
 
 ## Information about EC2 VM deployment

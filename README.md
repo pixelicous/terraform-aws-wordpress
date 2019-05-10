@@ -32,7 +32,7 @@ module "wordpress" {
 ```
 
 ## Architecture
-The architecture is based of AWS' WordPress deployment best practices which can be found here:
+The architecture is based of AWS' WordPress deployment best practices.
 ![AWS Reference Architecture](https://github.com/pixelicous/terraform-aws-wordpress/blob/master/images/aws-refarch-wordpress.jpeg?raw=true)
 
 

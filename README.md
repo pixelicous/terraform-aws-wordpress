@@ -42,8 +42,7 @@ After EC2 is provisioned the following configuration steps will be executed:
 
 This step runs as part of a "null resource", in order to wait for EC2, RDS and related security groups to be provisioned first.
 
-## Not yet implemented
- * CloudFront
+> Please check CHANGELOG for future features and/or bug fixes.
 
 ## References
 * https://github.com/aws-samples/aws-refarch-wordpress

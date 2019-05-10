@@ -12,7 +12,7 @@ The module createse a new VPC with an internet gateway and a routing table.
   to your root module folder at "./ssh". Set "ec2_key_name" variable to the same filename (without PEM file prefix).
 
 An example of using the module in existing code:
-```
+```json
 module "wordpress" {
   source = "git::https://github.com/pixelicous/terraform-aws-wordpress.git?ref=master"
 

@@ -12,7 +12,7 @@
 ## 1.0.0 (May 10th, 2019)
 
 ### Features:
-* `EC2` - Boostrap of server: DB migration
+* `EC2` - Bootstrap of server: DB migration
 * `EFS`
 * `RDS`
 * `ELB`

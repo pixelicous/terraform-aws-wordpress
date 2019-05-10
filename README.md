@@ -2,8 +2,9 @@
 [![Release](https://img.shields.io/github/release/pixelicous/terraform-aws-wordpress.svg)](https://github.com/pixelicous/terraform-aws-wordpress/releases)
 
 # WordPress AWS Best Practice Module
-This repo contains a set module in the wordpress folder for deploying a fully redundant and highly available WordPress site.
-The module createse a new VPC with an internet gateway and a routing table.
+This repo's root folder contains a wordpress terraform module for deploying a fully redundant and highly available WordPress site.
+As of version 1.0.0 this module creates a new VPC with an internet gateway and a routing table.
+An option to use the default or existing VPC will be added in future version.
 
 > Please check [CHANGELOG](CHANGELOG.md) for future features and/or bug fixes.
 

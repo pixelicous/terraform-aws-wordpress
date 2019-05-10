@@ -6,7 +6,7 @@ This repo contains a set module in the wordpress folder for deploying a fully re
 The module createse a new VPC with an internet gateway and a routing table.
 
 ## Usage
-* An example exists in the [EXAMPLES](examples/) folder
+* An example for using this module exists in the [examples](examples/) folder.
 * Fetch certificate in case you want to use SSL on NLB. Uncomment "listener" parameter under aws_elb in network.tf
 * As terraform currently cannot create a key pair, please create one manually. Afterwards download the private key `
   to your root module folder at "./ssh". Set "ec2_key_name" variable to the same filename (without PEM file prefix).

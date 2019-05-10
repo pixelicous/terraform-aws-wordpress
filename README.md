@@ -1,5 +1,5 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
-[![Release](https://img.shields.io/github/release/pixelicous/terraform-aws-wordpress.svg)]()
+[![Release](https://img.shields.io/github/release/pixelicous/terraform-aws-wordpress.svg)](https://github.com/pixelicous/terraform-aws-wordpress/releases)
 
 # WordPress AWS Best Practice Module
 This repo contains a set module in the wordpress folder for deploying a fully redundant and highly available WordPress site.

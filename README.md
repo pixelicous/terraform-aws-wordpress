@@ -32,7 +32,7 @@ module "wordpress" {
 
 ## Architecture
 The architecture is based of AWS' WordPress deployment best practices which can be found here:
-![AWS Reference Architecture](images/aws-refarch-wordpress.jpeg)
+![AWS Reference Architecture](https://github.com/pixelicous/terraform-aws-wordpress/blob/master/images/aws-refarch-wordpress.jpeg?raw=true)
 
 
 ## Information about EC2 VM deployment

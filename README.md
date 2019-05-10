@@ -5,6 +5,8 @@
 This repo contains a set module in the wordpress folder for deploying a fully redundant and highly available WordPress site.
 The module createse a new VPC with an internet gateway and a routing table.
 
+> Please check [CHANGELOG](CHANGELOG.md) for future features and/or bug fixes.
+
 ## Usage
 * An example for using this module exists in the [examples](examples/) folder.
 * Fetch certificate in case you want to use SSL on NLB. Uncomment "listener" parameter under aws_elb in network.tf
@@ -42,7 +44,6 @@ After EC2 is provisioned the following configuration steps will be executed:
 
 This step runs as part of a "null resource", in order to wait for EC2, RDS and related security groups to be provisioned first.
 
-> Please check CHANGELOG for future features and/or bug fixes.
 
 ## References
 * https://github.com/aws-samples/aws-refarch-wordpress

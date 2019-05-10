@@ -9,7 +9,7 @@
 * Switch to Aurora?
 * Switch `EFS` module?
 
-## 0.0.1 (October 6th, 2019)
+## 0.0.1 (May 10th, 2019)
 
 ### Features:
 * `EC2` - Boostrap of server: DB migration

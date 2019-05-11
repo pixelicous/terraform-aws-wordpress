@@ -4,7 +4,7 @@ mkdir ~/backup
 cd ~
 
 # Replace password and dump
-echo $1 $2 $3
+
 #/opt/bitnami/mysql/bin/mysqladmin -u $1 -h 127.0.0.1 -p380cccf909 password $2
 
 # TODO: fix password change including hash
@@ -26,7 +26,10 @@ sudo mv /opt/bitnami/mysql /opt/bitnami/mysql-disabled
 
 sudo cp $HTDOCS_PATH/wp-config.php $HTDOCS_PATH/bp-wp-config.php
 sudo sed -i -r 's/(localhost:3306|LOCALHOST:3306)/'$4':3306/g' $HTDOCS_PATH/wp-config.php
- 
-# Install and activate wodpress S3 Plugin
+
+# Add rows to use IAM role with WordPress AWS s3 plugin (still need to enable setting in admin dashboard).
+sudo sed -i -r  '/(WP_HOME)/ a define\( \x27AS3CF_AWS_USE_EC2_IAM_ROLE\x27, true \)\;' $HTDOCS_PATH/wp-config.php
+
+# Install and activate WordPress AWS S3 Plugin
 wp plugin install amazon-s3-and-cloudfront
 wp plugin activate amazon-s3-and-cloudfront

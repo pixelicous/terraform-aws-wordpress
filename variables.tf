@@ -47,6 +47,10 @@ variable "s3_bucket_name" {
   description = "(Optional, Forces new resource) The name of the bucket to host Wordpress objects. If omitted, Terraform will assign a random, unique name."
   default = ""
 }
+variable "s3_elblogs_bucket_name" {
+  description = "(Optional, Forces new resource) The name of the bucket to host ELB logs. If omitted, Terraform will assign a random, unique name."
+  default = ""
+}
 
 
 #--------------------------------------------------------

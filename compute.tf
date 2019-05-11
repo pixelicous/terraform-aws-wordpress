@@ -18,7 +18,7 @@ resource "aws_instance" "wordpress" {
   key_name = "${var.ec2_key_name}"
   instance_type = "${var.ec2_instance_type}"
   subnet_id = "${aws_subnet.wordpress.id}"
-
+  iam_instance_profile = "${aws_iam_instance_profile.wordpress.name}"
 
   vpc_security_group_ids = [
     "${aws_security_group.wordpress.id}",

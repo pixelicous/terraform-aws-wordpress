@@ -19,7 +19,7 @@ variable "tags" {
 variable "availability_zone" {
   description = "Main availability zone for resources with no high availability."
   type        = "string"
-  default     = "us-east-1d"
+  default     = "us-east-1a"
 }
 
 variable "availability_zones" {

@@ -27,7 +27,7 @@ resource "aws_security_group" "wordpress_elb" {
 # --------------------------------------------------------
 ### Security group rules
 
-# Internet > ELB : HTTP
+# Any > ELB : HTTP
 resource "aws_security_group_rule" "elb_ingress_http" {
   security_group_id = "${aws_security_group.wordpress_elb.id}"
   cidr_blocks       = ["0.0.0.0/0"]
@@ -37,7 +37,7 @@ resource "aws_security_group_rule" "elb_ingress_http" {
   to_port           = 80
 }
 
-# Internet > ELB : HTTPS
+# Any > ELB : HTTPS
 resource "aws_security_group_rule" "elb_ingress_https" {
   security_group_id = "${aws_security_group.wordpress_elb.id}"
   cidr_blocks       = ["0.0.0.0/0"]
@@ -97,7 +97,7 @@ resource "aws_security_group_rule" "ec2_ingress_https" {
   to_port           = 443
 }
 
-# EC2 > Internet : Ephemeral
+# EC2 > Any : Ephemeral
 resource "aws_security_group_rule" "ec2_egress_reply" {
   security_group_id = "${aws_security_group.wordpress.id}"
   type              = "egress"
@@ -143,7 +143,7 @@ resource "aws_security_group_rule" "rds_ingress_mysql" {
   to_port           = 3306
 }
 
-# RDS > Internet : MySQL
+# RDS > Any : MySQL
 resource "aws_security_group_rule" "rds_egress_mysql" {
   security_group_id = "${aws_security_group.wordpress_db.id}"
   type              = "egress"

@@ -19,10 +19,6 @@ jobs:
     - stage: Check HCL style
       script: export PATH=$PATH:tools/bin; terraform fmt
     - stage: Integration test
-      before_install:
-      - cd "./terraform-aws-wordpress"
-      - gem update --system
-      - gem install bundler
       script: "./test/travis/scripts/kitchen.sh"
     - stage: tag
       before_deploy:

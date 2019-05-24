@@ -1,4 +1,10 @@
 language: ruby
+addons:
+  apt:
+    sources:
+      - chef-current-trusty
+    packages:
+      - chefdk
 install: bundle install --jobs=3 --retry=3 --no-cache
 cache:
   directories:

@@ -25,9 +25,8 @@ ssh-keygen -b 4096 -C "Kitchen-Terraform AWS provider tutorial" -f test/assets/w
 
 
 # Run test
-bundle install
 bundle exec kitchen test --destroy always
 KITCHEN_EXIT_CODE=$? #Save exit code to exit with it, but still clean up no matter the code
-
+if [ $KITCHEN_EXIT_CODE -ne 0 ]; then cat .kitchen/logs/test-suite-centos.log
 
 exit $KITCHEN_EXIT_CODE

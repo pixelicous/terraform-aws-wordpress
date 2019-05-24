@@ -12,3 +12,6 @@
 **/.ssh/*
 *credentials.*
 *.env*
+
+# Kitchen
+*.kitchen*

@@ -7,3 +7,8 @@
 
 # .tfvars files
 *.tfvars
+
+# Sensitive files
+**/.ssh/*
+*credentials.*
+*.env*

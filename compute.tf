@@ -17,7 +17,7 @@ resource "aws_route53_record" "wordpress" { #EC2 public ip a record, used with E
 resource "aws_key_pair" "wordpress" {
   key_name = "${var.ec2_key_name}"
 
-  public_key = "${var.key_pair_public_key}"
+  public_key = "${var.ec2_public_key}"
 }
 
 #--------------------------------------------------------

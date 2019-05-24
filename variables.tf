@@ -56,6 +56,11 @@ variable "s3_elblogs_bucket_name" {
 #--------------------------------------------------------
 ### Compute
 
+variable "ec2_public_key" {
+  description = "The public key to use for SSH authentication with the instances"
+  type = "string"
+}
+
 variable "ec2_instance_type" {
   description = "The type of instance to start. Updates to this field will trigger a stop/start of the EC2 instance."
   type = "string"

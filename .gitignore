@@ -15,4 +15,4 @@
 test/assets/*
 
 # Kitchen
-*.kitchen*
+*.kitchen/

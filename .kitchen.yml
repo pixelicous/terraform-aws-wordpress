@@ -1,0 +1,68 @@
+driver:
+  name: terraform
+  # The test fixture Terraform configuration is configured to be the Terraform
+  # root module
+  root_module_directory: test/fixtures/tf_module
+  variables:
+    route53_zone_id: <%= ENV['ROUTE53_ZONE_ID'] %>
+    
+
+provisioner:
+  name: terraform
+
+verifier:
+  name: terraform
+
+# Platforms provide hooks for overriding the global Test Kitchen plugin
+# configuration to provide platform-specific values
+platforms:
+  - name: centos
+
+    verifier:
+      systems:
+        - name: local
+
+          backend: local
+
+          # A subset of the controls included in the extensive_suite InSpec
+          # profile will be executed
+          controls:
+            - inspec_attributes
+            - state_file
+
+        - name: web
+
+          backend: local
+
+          controls:
+            - reachable_website
+
+          # The value of the Terraform output named remote_group_public_dns will
+          # be used to obtain the hostnames to target with InSpec
+          hosts_output: elb_fqdn
+
+        - name: remote
+
+          backend: ssh
+
+          controls:
+            - operating_system
+           # - reachable_ssh
+
+          # The value of the Terraform output named remote_group_public_dns will
+          # be used to obtain the hostnames to target with InSpec
+          hosts_output: ec2_ip
+
+          # The generated key pair is configured to be used for the SSH
+          # authentication performed by InSpec
+          key_files:
+            - test/assets/wordpressec2
+
+          user: bitnami
+
+# Suites include tests and provide additional hooks for overriding the global Test
+# Kitchen plugin configuration
+suites:
+  - # Kitchen-Terraform will assume that the InSpec profile for this suite is
+    # located at test/integration/extensive_suite
+    name: test_suite

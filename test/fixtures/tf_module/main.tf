@@ -18,9 +18,9 @@ module "wordpress" {
     Service = "WordPress"
   }
   
-  
+  # R53 Zone Id passed as environment variable from Travis > Kitchen > TF test module
+  #route53_zone_id     = "zone_id" 
   route53_record_name = "wpblog"
-  route53_zone_id     = "zone_id"
   rds_db_identifier   = "rds-${random_string.short.result}"
 }
 

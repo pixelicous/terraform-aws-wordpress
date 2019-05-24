@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+TRAVISCI_LINUX_IPS='nat.gce-us-central1.travisci.net'
+#TRAVISCI_GLOBAL_IPS='nat.travisci.net'
+TRAVISCI_IPS="$(dig +short $TRAVISCI_LINUX_IPS | awk '{printf $1"/32,"}' ORS=" ")"
+
 # Add binaries to bin directory
 mkdir -p tools/bin
 export PATH=$PATH:tools/bin:tools/aws-sdk/bin

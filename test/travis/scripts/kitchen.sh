@@ -6,7 +6,7 @@ TRAVISCI_IPS="$(dig +short $TRAVISCI_LINUX_IPS | awk '{printf $1"/32,"}' ORS=" "
 
 # Add binaries to bin directory
 [ ! -d "./vendor/bin" ] && mkdir -p vendor/bin
-export PATH=$PATH:vendor/bin:vendor/aws-sdk/bin
+export PATH=$PATH:vendor/aws-sdk/bin
 
 # Install AWS CLI
 curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"

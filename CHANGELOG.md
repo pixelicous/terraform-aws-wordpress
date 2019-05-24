@@ -8,6 +8,7 @@
 * Change `ELB` to `ALB`?
 * Switch to Aurora?
 * Switch `EFS` module?
+* Add EC2 volume HCL  
 
 ## 1.0.0 (May 10th, 2019)
 

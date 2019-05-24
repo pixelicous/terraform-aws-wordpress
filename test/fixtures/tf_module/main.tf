@@ -32,6 +32,7 @@ module "wordpress" {
 
 resource "random_string" "short" {
   length = 5
+  upper = false
   special = false
 }
 

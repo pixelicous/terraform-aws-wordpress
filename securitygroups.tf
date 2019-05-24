@@ -71,7 +71,7 @@ resource "aws_security_group_rule" "elb_egress_https" {
 resource "aws_security_group_rule" "ingress_ssh" {
   security_group_id = "${aws_security_group.wordpress.id}"
   type              = "ingress"
-  cidr_blocks       = ["${var.jumpbox_ip}/32"]
+  cidr_blocks       = ["${split(",", var.jumpbox_ip)}"]
   protocol          = "tcp"
   from_port         = 22
   to_port           = 22

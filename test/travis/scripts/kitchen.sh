@@ -29,6 +29,7 @@ bundle exec kitchen test --destroy always
 KITCHEN_EXIT_CODE=$? #Save exit code to exit with it, but still clean up no matter the code
 if [ $KITCHEN_EXIT_CODE -ne "0" ]
 then
+printf "----------------------------\nKitchen Error Log"
 cat .kitchen/logs/test-suite-centos.log
 fi
 

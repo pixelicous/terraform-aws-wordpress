@@ -12,6 +12,7 @@
 **/.ssh/*
 *credentials.*
 *.env*
+test/assets/*
 
 # Kitchen
 *.kitchen*

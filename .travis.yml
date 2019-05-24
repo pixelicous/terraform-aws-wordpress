@@ -19,10 +19,6 @@ jobs:
     - stage: Check HCL style
       script: export PATH=$PATH:vendor/bin; terraform fmt
     - stage: Integration test
-      before_script:
-      - gem update --system
-      - gem install bundler
-      - bundle install
       script: "./test/travis/scripts/kitchen.sh"
     - stage: tag
       before_deploy:

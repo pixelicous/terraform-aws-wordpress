@@ -34,5 +34,4 @@ jobs:
           repo: pixelicous/terraform-aws-wordpress
           branch: master
 notifications:
-  slack: '$SLACK_NOTIFY'
-    on_failure: always
+  slack: $SLACK_NOTIFY

@@ -5,15 +5,15 @@ TRAVISCI_LINUX_IPS='nat.gce-us-central1.travisci.net'
 TRAVISCI_IPS="$(dig +short $TRAVISCI_LINUX_IPS | awk '{printf $1"/32,"}' ORS=" ")"
 
 # Add binaries to bin directory
-[ ! -d "./vendor/bin" ] && mkdir -p vendor/bin
+[ ! -d "$HOME/vendor/bin" ] && mkdir -p $HOME/vendor/bin
 export PATH=$PATH:$HOME/vendor/bin:$HOME/vendor/aws-sdk/bin
 
 # Install AWS CLI
 curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
 sudo apt-get -y install unzip
 unzip awscli-bundle.zip
-sudo ./awscli-bundle/install -i vendor/aws-sdk -b vendor/aws-sdk/bin/aws
-vendor/aws-sdk/bin/aws --version
+sudo ./awscli-bundle/install -i $HOME/vendor/aws-sdk -b $HOME/vendor/aws-sdk/bin/aws
+$HOME/vendor/aws-sdk/bin/aws --version
 
 # Authenticate
 # Make a directory to contain the key

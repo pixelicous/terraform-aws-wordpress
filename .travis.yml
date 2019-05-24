@@ -1,0 +1,36 @@
+language: ruby
+cache:
+  directories:
+  - tools/bundle
+  - tools/cache
+  - tools/bin
+  - tools/aws-sdk
+
+jobs:
+  stages:
+  - name: Cache preparation
+  - name: Check HCL style
+  - name: Integration test
+  - name: tag
+  matrix:
+  include:
+    - stage: Cache preparation
+      script: "./test/travis/scripts/cache_prepare.sh"
+    - stage: Check HCL style
+      script: export PATH=$PATH:tools/bin; terraform fmt
+    - stage: Integration test
+      script: "./test/travis/scripts/kitchen.sh"
+    - stage: tag
+      before_deploy:
+      - git config --local user.name "pixelicous"
+      - git config --local user.email "pixi@pixelabs.net"
+      - git tag "$(cat version)"
+      deploy:
+        provider: releases
+        api_key: $GIT_TOKEN
+        file: "**/*"
+        on:
+          repo: pixelicous/terraform-aws-wordpress
+          branch: master
+notifications:
+  slack: $SLACK_NOTIFY

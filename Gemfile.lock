@@ -298,6 +298,3 @@ DEPENDENCIES
   bcrypt_pbkdf (>= 1.0, < 2.0)!
   kitchen-terraform (~> 4.0)!
   rbnacl (>= 3.2, < 5.0)!
-
-BUNDLED WITH
-   2.0.1

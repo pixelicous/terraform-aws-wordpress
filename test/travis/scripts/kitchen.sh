@@ -23,7 +23,7 @@ sudo ./awscli-bundle/install -i /vendor/aws-sdk -b /vendor/aws-sdk/bin/aws
 # Add "-m pem" if running from OSX mojave
 ssh-keygen -b 2048 -C "Kitchen-Terraform AWS" -f test/assets/wordpress -N "" -t rsa
 
-
+which terraform
 # Run test
 bundle exec kitchen test --destroy always
 KITCHEN_EXIT_CODE=$? #Save exit code to exit with it, but still clean up no matter the code

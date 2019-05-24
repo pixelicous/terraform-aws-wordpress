@@ -35,3 +35,5 @@ jobs:
           branch: master
 notifications:
   slack: $SLACK_NOTIFY
+    on_failure: always
+    on_success: changes

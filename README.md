@@ -49,6 +49,7 @@ This step runs as part of a "null resource", in order to wait for EC2, RDS and r
 ## References
 * https://github.com/aws-samples/aws-refarch-wordpress
 * https://d1.awsstatic.com/whitepapers/wordpress-best-practices-on-aws.pdf
+* https://aws-quickstart.s3.amazonaws.com/quickstart-bitnami-wordpress/doc/wordpress-high-availability-by-bitnami-on-the-aws-cloud.pdf
 
 ## Authors
 Module managed by [Netzer Rom](https://github.com/pixelicous).

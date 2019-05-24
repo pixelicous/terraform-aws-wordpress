@@ -4,9 +4,9 @@ driver:
   # root module
   root_module_directory: test/fixtures/tf_module
   variables:
-    route53_zone_id: <%= ENV['ROUTE53_ZONE_ID'] %>
+    route53_zone_id: "<%= ENV['ROUTE53_ZONE_ID'] %>"
+    jumpbox_ip: "<%= ENV['TRAVISCI_IPS'] %>"
     
-
 provisioner:
   name: terraform
 
@@ -56,7 +56,7 @@ platforms:
           # The generated key pair is configured to be used for the SSH
           # authentication performed by InSpec
           key_files:
-            - test/assets/wordpressec2
+            - test/assets/wordpress
 
           user: bitnami
 

@@ -1,3 +1,6 @@
+#--------------------------------------------------------
+### EC2
+
 resource "aws_eip" "wordpress" {
   instance = "${aws_instance.wordpress.id}"
   vpc      = false
@@ -11,11 +14,17 @@ resource "aws_route53_record" "wordpress" { #EC2 public ip a record, used with E
   records = ["${aws_instance.wordpress.public_ip}"]
 }
 
+resource "aws_key_pair" "wordpress" {
+  key_name = "${var.ec2_key_name}"
+
+  public_key = "${var.key_pair_public_key}"
+}
+
 #--------------------------------------------------------
 ### EC2
 resource "aws_instance" "wordpress" {
   ami           = "${lookup(var.ami_images, var.region)}"
-  key_name = "${var.ec2_key_name}"
+  key_name = "${aws_key_pair.wordpress.key_name}"
   instance_type = "${var.ec2_instance_type}"
   subnet_id = "${aws_subnet.wordpress.id}"
   iam_instance_profile = "${aws_iam_instance_profile.wordpress.name}"
@@ -50,7 +59,7 @@ resource "null_resource" "bootstrap_ec2" {
       host = "${aws_eip.wordpress.public_ip}"
       type     = "ssh"
       user = "bitnami" # Default username of the AMI
-      private_key = "${file("${path.root}/.ssh/${var.ec2_key_name}.pem")}"
+      private_key = "${file("${path.module}/test/assets/${var.ec2_key_name}")}"
     }
 
   provisioner "file" {

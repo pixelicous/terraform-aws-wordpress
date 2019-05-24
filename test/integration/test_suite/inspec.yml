@@ -1,7 +1,7 @@
 ---
 name: test_suite
 title: Wordpress Kitchen-Terraform Tests
-version: 1.0.1
+version: 0.1.0
 license: MIT
 copyright: Netzer Rom 2019
 #inspec_version: "~> 2.1"

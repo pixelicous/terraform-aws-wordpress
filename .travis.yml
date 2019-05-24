@@ -21,9 +21,9 @@ jobs:
   matrix: 
   include:
   - stage: Cache preparation
-    script: "./test/travis/scripts/cache_prepare.sh"
+    script: pwd; "./test/travis/scripts/cache_prepare.sh"
   - stage: Check HCL style
-    script: export PATH=$PATH:vendor/bin; terraform fmt
+    script: export PATH=$PATH:/vendor/bin; terraform fmt
   - stage: Integration test
     script: "./test/travis/scripts/kitchen.sh"
   - stage: tag

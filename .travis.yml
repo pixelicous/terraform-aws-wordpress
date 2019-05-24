@@ -19,7 +19,7 @@ jobs:
     - stage: Check HCL style
       script: export PATH=$PATH:tools/bin; terraform fmt
     - stage: Integration test
-      before_install:
+      before_script:
       - gem update --system
       - gem install bundler
       - bundle install

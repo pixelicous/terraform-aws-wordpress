@@ -10,7 +10,7 @@ cache:
   directories:
   - vendor/bundle
   - vendor/cache
-  - ${HOME}/vendor/bin
+  - vendor/bin
   - vendor/aws-sdk
 jobs:
   stages:
@@ -23,7 +23,7 @@ jobs:
   - stage: Cache preparation
     script: "./test/travis/scripts/cache_prepare.sh"
   - stage: Check HCL style
-    script: export PATH=$PATH:${HOME}/vendor/bin; terraform fmt
+    script: export PATH=$PATH:${TRAVIS_BUILD_DIR}/vendor/bin; terraform fmt
   - stage: Integration test
     script: "./test/travis/scripts/kitchen.sh"
   - stage: tag

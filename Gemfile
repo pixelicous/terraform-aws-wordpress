@@ -6,4 +6,5 @@ source 'https://rubygems.org/' do
   #gem 'rhcl', '~> 0.1.0'
   gem 'rbnacl', ['>= 3.2', '< 5.0']
   gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+  gem 'rake'
 end

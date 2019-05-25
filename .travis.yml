@@ -5,7 +5,7 @@ language: ruby
 #      - chef-current-trusty
 #    packages:
 #      - chefdk
-#install: bundle install --jobs=3 --retry=3 --no-cache
+install: bundle install --jobs=3 --retry=3 --no-cache
 cache:
   directories:
   - vendor/bundle
@@ -27,6 +27,7 @@ jobs:
   - stage: Integration test
     script: "./test/travis/scripts/kitchen.sh"
   - stage: tag
+    script: skip
     before_deploy:
       - git config --local user.name "pixelicous"
       - git config --local user.email "pixi@pixelabs.net"

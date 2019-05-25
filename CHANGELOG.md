@@ -1,5 +1,4 @@
-## 0.0.2 (Unreleased)
-
+## 0.3.0 (Unreleased)
 ### Features:
 * `CloudFront` resources
 * Add option for default VPC / existing VPC
@@ -10,7 +9,14 @@
 * Switch `EFS` module?
 * Add EC2 volume HCL  
 
-## 1.0.0 (May 10th, 2019)
+## 0.2.2 (May 24th, 2019)
+### Features:
+* Added CI pipeline with Travis
+* Added tests through KitchenCI
+* Added terraform resource - Certificate key pair
+* Updated README
+
+## 0.1.0 (May 10th, 2019)
 
 ### Features:
 * `EC2` - Bootstrap of server: DB migration

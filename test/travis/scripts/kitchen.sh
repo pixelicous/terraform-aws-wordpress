@@ -3,7 +3,7 @@
 # As documented in https://docs.travis-ci.com/user/ip-addresses/
 # TRAVISCI_GLOBAL_IPS='nat.travisci.net'
 TRAVISCI_LINUX_IPS='nat.gce-us-central1.travisci.net'
-export TRAVISCI_IPS="$(dig +short $TRAVISCI_LINUX_IPS | awk '{printf t $1; t=", "} END{print ""}')"
+export TRAVISCI_IPS="$(dig +short $TRAVISCI_LINUX_IPS | awk '{printf t $1"/32"; t=", "} END{print ""}')"
 
 # Add binaries to bin directory
 [ ! -d "./vendor/bin" ] && mkdir -p vendor/bin

@@ -3,7 +3,7 @@
 # As documented in https://docs.travis-ci.com/user/ip-addresses/
 # TRAVISCI_GLOBAL_IPS='nat.travisci.net'
 TRAVISCI_LINUX_IPS='nat.gce-us-central1.travisci.net'
-export TRAVISCI_IPS="$(dig +short $TRAVISCI_LINUX_IPS | awk '{printf $1"/32,"}' ORS=" ")"
+export TRAVISCI_IPS="$(dig +short $TRAVISCI_LINUX_IPS | awk '{printf t $1; t=", "} END{print ""}')"
 
 # Add binaries to bin directory
 [ ! -d "./vendor/bin" ] && mkdir -p vendor/bin
@@ -24,15 +24,12 @@ vendor/aws-sdk/bin/aws --version
 # Add "-m pem" if running from OSX mojave
 ssh-keygen -b 2048 -C "Kitchen-Terraform AWS" -f test/assets/wordpress -N "" -t rsa
 
-which terraform
 # Run test
 bundle exec kitchen test --destroy always
 KITCHEN_EXIT_CODE=$? #Save exit code to exit with it, but still clean up no matter the code
-printf "%sPATH:\n" $PATH
+
 if [ $KITCHEN_EXIT_CODE -ne "0" ]
 then
-printf "***************\nKitchen Error Log"
-
 cat .kitchen/logs/test-suite-centos.log
 fi
 

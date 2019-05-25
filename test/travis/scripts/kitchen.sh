@@ -25,12 +25,12 @@ vendor/aws-sdk/bin/aws --version
 ssh-keygen -b 2048 -C "Kitchen-Terraform AWS" -f test/assets/wordpress -N "" -t rsa
 
 # Run test
-#bundle exec kitchen test --destroy always
-#KITCHEN_EXIT_CODE=$? #Save exit code to exit with it, but still clean up no matter the code
+bundle exec kitchen test --destroy always
+KITCHEN_EXIT_CODE=$? #Save exit code to exit with it, but still clean up no matter the code
 
 if [ $KITCHEN_EXIT_CODE -ne "0" ]
 then
 cat .kitchen/logs/test-suite-centos.log
 fi
-exit 0
-#exit $KITCHEN_EXIT_CODE
+
+exit $KITCHEN_EXIT_CODE

@@ -1,4 +1,6 @@
 language: ruby
+if: (tag IS blank) AND (branch = master)
+
 #addons:
 #  apt:
 #    sources:

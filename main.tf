@@ -25,7 +25,7 @@ resource "aws_elb" "wordpress" {
   connection_draining         = true
   connection_draining_timeout = 300
   security_groups = ["${aws_security_group.wordpress_elb.id}"]
-  subnets = ["${aws_subnet.wordpress.id}"]
+  subnets = ["${data.aws_subnet.wordpress.id}"]
 
   access_logs {
     bucket        = "${aws_s3_bucket.elb_logs.bucket}"
@@ -101,8 +101,8 @@ module "efs" {
   availability_zones = ["${var.availability_zone}"]
   aws_region         = "${var.region}"
   security_groups    = ["${aws_security_group.wordpress_efs.id}"]
-  subnets            = ["${aws_subnet.wordpress.id}"]
-  vpc_id             = "${aws_vpc.wordpress.id}"
+  subnets            = ["${data.aws_subnet.wordpress.id}"]
+  vpc_id             = "${data.aws_subnet.wordpress.vpc_id}"
   zone_id            = "${aws_route53_record.wordpress.zone_id}"
 }
 

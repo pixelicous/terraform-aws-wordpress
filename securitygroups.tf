@@ -3,24 +3,24 @@
 ### Security Groups
 resource "aws_security_group" "wordpress_efs" {
   name        = "wordpress_efs"
-  vpc_id      = "${aws_vpc.wordpress.id}"
+  vpc_id      = "${data.aws_subnet.wordpress.vpc_id}"
   description = "WordPress EFS"
 }
 resource "aws_security_group" "wordpress_db" {
   name        = "wordpress_db"
-  vpc_id      = "${aws_vpc.wordpress.id}"
+  vpc_id      = "${data.aws_subnet.wordpress.vpc_id}"
   description = "WordPress Database"
 }
 
 resource "aws_security_group" "wordpress" {
   name        = "wordpress"
-  vpc_id      = "${aws_vpc.wordpress.id}"
+  vpc_id      = "${data.aws_subnet.wordpress.vpc_id}"
   description = "WordPress EC2"
 }
 
 resource "aws_security_group" "wordpress_elb" {
   name        = "WordPress ELB"
-  vpc_id      = "${aws_vpc.wordpress.id}"
+  vpc_id      = "${data.aws_subnet.wordpress.vpc_id}"
   description = "Control the access to the ELB."
 }
 

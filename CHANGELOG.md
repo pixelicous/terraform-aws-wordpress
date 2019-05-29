@@ -9,6 +9,10 @@
 * Switch `EFS` module?
 * Add EC2 volume HCL  
 
+## 0.2.3 (May 29th, 2019)
+### Features:
+* Use existing subnets
+
 ## 0.2.2 (May 24th, 2019)
 ### Features:
 * Added CI pipeline with Travis

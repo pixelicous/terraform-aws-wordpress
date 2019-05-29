@@ -21,6 +21,10 @@ module "wordpress" {
   s3_elblogs_bucket_name = "wordpress-elblogs-${random_string.short.result}"
   ec2_key_name   = "wordpress"
   ec2_public_key = "${file("${path.root}/../../assets/wordpress.pub")}"
+  ec2_private_key = "${file("${path.root}/../../assets/wordpress")}"
+  
+  subnet_id = "${aws_subnet.wordpress.id}"
+  subnet_2_id = "${aws_subnet.wordpress_2.id}"
 
   tags = {
     Service = "WordPress"
@@ -28,18 +32,11 @@ module "wordpress" {
   
   route53_record_name = "wpblog"
   rds_db_identifier   = "rds-${random_string.short.result}"
+
 }
 
 resource "random_string" "short" {
   length = 5
   upper = false
   special = false
-}
-
-variable "route53_zone_id" {
-  type = "string"
-}
-
-variable "jumpbox_ip" {
-  type = "string"
 }

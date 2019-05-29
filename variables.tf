@@ -13,6 +13,16 @@ variable "tags" {
   default = {}
 }
 
+variable "subnet_id" {
+  description = "Specifies the subnet to provision resources to."
+  type        = "string"
+}
+
+variable "subnet_2_id" {
+  description = "Specifies the secondary subnet to provision resources to."
+  type        = "string"
+}
+
 #--------------------------------------------------------
 ### Route 53
 
@@ -56,7 +66,13 @@ variable "s3_elblogs_bucket_name" {
 #--------------------------------------------------------
 ### Compute
 
+
 variable "ec2_public_key" {
+  description = "The public key to use for SSH authentication with the instances"
+  type = "string"
+}
+
+variable "ec2_private_key" {
   description = "The public key to use for SSH authentication with the instances"
   type = "string"
 }

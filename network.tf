@@ -7,7 +7,7 @@ data "aws_subnet" "wordpress" {
   id = "${var.subnet_id}"
 }
 
-data "aws_subnet" "wordpress2" {
+data "aws_subnet" "wordpress_2" {
   id = "${var.subnet_2_id}"
 }
 

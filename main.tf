@@ -96,8 +96,8 @@ module "asg" {
 
 module "efs" {
   name   = "efs"
-  source = "git::https://github.com/cloudposse/terraform-aws-efs.git"
-
+  source = "cloudposse/efs/aws"
+ 
   availability_zones = ["${var.availability_zone}"]
   aws_region         = "${var.region}"
   security_groups    = ["${aws_security_group.wordpress_efs.id}"]

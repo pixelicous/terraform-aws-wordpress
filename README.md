@@ -12,7 +12,7 @@ An option to use the default or existing VPC will be added in future version.
 > Please check [CHANGELOG](CHANGELOG.md) for future features and/or bug fixes.\
 
 ## Support
-If you've find any value from the content I created, some support would be very much appreciated :)\
+If you've find any value from the content I created, some support would be very much appreciated :)
 
 [![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/pixelabs)&nbsp;&nbsp;&nbsp;&nbsp;[![Support me via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/pixeIabs/)
 

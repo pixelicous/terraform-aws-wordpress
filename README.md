@@ -1,13 +1,15 @@
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Release](https://img.shields.io/github/release/pixelicous/terraform-aws-wordpress.svg)](https://github.com/pixelicous/terraform-aws-wordpress/releases)
 [![Build Status](https://travis-ci.org/pixelicous/terraform-aws-wordpress.svg?branch=master)](https://travis-ci.org/pixelicous/terraform-aws-wordpress)
+[![Support me via PayPal](https://img.shields.io/badge/PayPal-Support-orange.svg?style=flat&logo=paypal)](https://www.paypal.me/pixeIabs)
+
 
 # WordPress AWS Best Practice Module
 This repo's root folder contains a wordpress terraform module for deploying a fully redundant and highly available WordPress site.
 As of version 1.0.0 this module creates a new VPC with an internet gateway and a routing table.
 An option to use the default or existing VPC will be added in future version.
 
-> Please check [CHANGELOG](CHANGELOG.md) for future features and/or bug fixes.
+> Please check [CHANGELOG](CHANGELOG.md) for future features and/or bug fixes.\
 
 ## Usage
 * An example for using this module exists in the [examples](examples/) folder.
@@ -76,3 +78,10 @@ Module managed by [Netzer Rom](https://github.com/pixelicous).
 
 ## License
 MIT Licensed. See LICENSE for full details.
+
+## Support
+If you've find any value from the content I created, some support would be very much appreciated :)\
+
+[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/pixelabs)
+
+[![Support me via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/pixeIabs/)

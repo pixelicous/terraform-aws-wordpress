@@ -11,6 +11,11 @@ An option to use the default or existing VPC will be added in future version.
 
 > Please check [CHANGELOG](CHANGELOG.md) for future features and/or bug fixes.\
 
+## Support
+If you've find any value from the content I created, some support would be very much appreciated :)\
+
+[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/pixelabs)&nbsp;&nbsp;&nbsp;&nbsp;[![Support me via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/pixeIabs/)
+
 ## Usage
 * An example for using this module exists in the [examples](examples/) folder.
 * Fetch certificate in case you want to use SSL on NLB. Uncomment "listener" parameter under aws_elb in network.tf
@@ -79,9 +84,3 @@ Module managed by [Netzer Rom](https://github.com/pixelicous).
 ## License
 MIT Licensed. See LICENSE for full details.
 
-## Support
-If you've find any value from the content I created, some support would be very much appreciated :)\
-
-[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/pixelabs)
-
-[![Support me via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/pixeIabs/)

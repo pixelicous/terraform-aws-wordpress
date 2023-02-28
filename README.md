@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/pixelicous/terraform-aws-wordpress.svg?branch=master)](https://travis-ci.org/pixelicous/terraform-aws-wordpress)
 [![Support me via PayPal](https://img.shields.io/badge/PayPal-Support-orange.svg?style=flat&logo=paypal)](https://www.paypal.me/pixeIabs)
 
-# THIS MODULE IS WAY OUT OF DATE AND ISN"T BEING MAINTAINED.
+# THIS MODULE IS WAY OUT OF DATE AND ISN'T BEING MAINTAINED.
 
 ## WordPress AWS Best Practice Module
 This repo's root folder contains a wordpress terraform module for deploying a fully redundant and highly available WordPress site.
